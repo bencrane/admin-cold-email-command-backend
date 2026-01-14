@@ -28,7 +28,7 @@ export async function GET(
   const { data: emailAccounts, error: emailError } = await customersDb
     .schema('product')
     .from('email_accounts')
-    .select('id, email, sender_name, daily_limit, status, created_at')
+    .select('id, email, sender_name, daily_limit, status, smartlead_account_id, created_at')
     .eq('org_id', id)
 
   // Fetch lead count
